@@ -1,37 +1,93 @@
-## Welcome to GitHub Pages
+---
+title:  使用Koa2
+subtitle: 
+date: 3/14/2017 2:16:27 PM 
+comments: true
+tags: 
+	- 前端
+	- Koa2
+	- Node
+categories: 前端开发
+author:
+  nick: 元宝
+  github_name: shenxiaai
 
-You can use the [editor on GitHub](https://github.com/shenxiaai/jekyllBlog/edit/master/index.md) to maintain and preview the content for your website in Markdown files.
+---
 
-Whenever you commit to this repository, GitHub Pages will run [Jekyll](https://jekyllrb.com/) to rebuild the pages in your site, from the content in your Markdown files.
+元宝君以前用过node的Express框架，最近听说Koa最近大热，似有超越Express之势，所以今天本君试试用Koa2搭建一个Web项目。
 
-### Markdown
+跟Express的上手套路一样，从“Hello World！”开始。
 
-Markdown is a lightweight and easy-to-use syntax for styling your writing. It includes conventions for
+# 自定义方式
 
-```markdown
-Syntax highlighted code block
+## 安装koa
 
-# Header 1
-## Header 2
-### Header 3
-
-- Bulleted
-- List
-
-1. Numbered
-2. List
-
-**Bold** and _Italic_ and `Code` text
-
-[Link](url) and ![Image](src)
+```
+	node install -g koa(或node install koa --save)
 ```
 
-For more details see [GitHub Flavored Markdown](https://guides.github.com/features/mastering-markdown/).
+## 新建一个app.js文件：
 
-### Jekyll Themes
+```
+	var koa = require('koa');
+	var app = new koa();
+	
+	app.use(function *(){
+	  this.body = 'Hello World';
+	});
+	
+	app.listen(3000);
+	console.log('Koa app started at port 3000...');
+```
 
-Your Pages site will use the layout and styles from the Jekyll theme you have selected in your [repository settings](https://github.com/shenxiaai/jekyllBlog/settings). The name of this theme is saved in the Jekyll `_config.yml` configuration file.
+> 其实Koa框架已经用ES6啦，这里为了好理解还是用的ES5，后面会慢慢开始用ES6。
 
-### Support or Contact
+## 在控制台运行app.js:
 
-Having trouble with Pages? Check out our [documentation](https://help.github.com/categories/github-pages-basics/) or [contact support](https://github.com/contact) and we’ll help you sort it out.
+```
+	node app.js
+```
+
+## 运行结果：
+
+**控制台：**
+
+![](/assets/images/img4.jpg)
+
+**页面上：**
+
+![](/assets/images/img5.jpg)
+
+# 使用koa应用生成器
+
+使用Express时有express-generator，用koa时也有koa-generator。
+
+## 安装koa-generator
+
+```
+	npm install -g koa-generator（或npm install koa-generator --save）
+```
+
+然后使用koa命令创建koa 1.x项目
+
+然后使用koa2命令创建koa 2.x项目
+
+## 新建myKoa文件夹
+
+```
+	mkdir myKoa
+	koa2 myKoa
+	cd myKoa
+	npm install
+	npm start
+```
+
+**运行结果：**
+
+![](/assets/images/img6.jpg)
+
+![](/assets/images/img8.jpg)
+
+![](/assets/images/img9.jpg)
+
+![](/assets/images/img10.jpg)
