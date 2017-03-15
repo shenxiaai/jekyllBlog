@@ -3,3 +3,6 @@
 
 @import "{{ site.theme }}";
 
+header{
+    background: url(../assets/images/bg.jpg) center no-repeat;background-size: 100% auto;
+}
